@@ -1,0 +1,27 @@
+{{template "partials/header" .}}
+
+<div class="container mt-5">
+    <h1 class="display-4 text-center">{{.Title}}</h1>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Source</th>
+            <th>App Name</th>
+            <th>Version</th>
+            <th>Latest Version</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{range .Apps}}
+        <tr>
+            <td>{{.Source}}</td>
+            <td>{{.AppName}}</td>
+            <td>{{.Version}}</td>
+            <td>{{.LatestVersion}}</td>
+        </tr>
+        {{end}}
+        </tbody>
+    </table>
+</div>
+
+{{template "partials/footer" .}}
