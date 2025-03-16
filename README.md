@@ -7,3 +7,7 @@ it uses GO framework Fiber
 * local usage expose port 9998
 * or you can use go mod tidy
 * and then run main
+
+## docker-compose
+* if u want to run locally version finder api and frontend u can use docker compose
+* set ip adresses and access them

@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  # https://github.com/yeticek/version-finder-api
+  version-finder-api:
+    build:
+      context: path/to/version-finder-api/.
+      dockerfile: Dockerfile
+    ports:
+      - "9999:9999"
+    networks:
+      version-finder-net:
+        ipv4_address: 172.20.0.2
+  # https://github.com/yeticek/version-finder-frontend-go
+  version-finder-frontend:
+    build:
+      context: path/to/version-finder-frontend-go\.
+      dockerfile: Dockerfile
+    ports:
+      - "9998:9998"
+    networks:
+      version-finder-net:
+        ipv4_address: 172.20.0.3
+
+networks:
+  version-finder-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

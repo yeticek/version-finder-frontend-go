@@ -29,7 +29,7 @@ func main() {
 
 	app.Get("/", func(c *fiber.Ctx) error {
 		// Make an HTTP GET request to the API endpoint
-		resp, err := http.Get("http://localhost:9999/api/response")
+		resp, err := http.Get("http://172.20.0.2:9999/api/response")
 		if err != nil {
 			return c.Status(fiber.StatusInternalServerError).SendString("Error fetching data")
 		}
